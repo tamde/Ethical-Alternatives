@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+  <link rel="stylesheet" href="/css/mainStyle.css">
+  <link rel="stylesheet" href="/css/login_register.css">
+  <link rel="stylesheet" href="/css/build_recipe.css">
+  <link rel="stylesheet" href="/css/ethicalAltStyle.css">
+  <link rel="stylesheet" href="/css/meal_search.css">
+  
+  <title>Ethical Eating - The Coasters</title>
+  
+  <link rel="icon" type="image/png" href="/img/balance-scale.png">
+  
+</head>
+<body>
+  <!-- TOP NAV BAR managed by passport -->
+  <div id="logoContainer">
+    <div id="logo">
+      <a href="/">Ethical Eats</a>
+    </div>
+    <div id="about">
+      <a href="/about">About</a>
+    </div>
+    <div id="searchBar">
+      <a href="/meal_search">Search Recipes / Ingredients </a>
+    </div>
+    <div id="loginBar">
+      {{#if user}}
+        Welcome 
+        {{#if user.nickname}}
+          {{user.nickname}}
+        {{else}}
+          {{user.username}}
+        {{/if}}
+        <pre>  </pre>
+        <a href="/profile"> Edit profile</a>
+        <pre>  </pre>
+        <a href="/logout"> Logout</a>
+      {{else}}
+        <a href="/login_register">Login | Register</a>
+      {{/if}}
+    </div>
+  </div>
+
+  {{{body}}}
+	
+  <script src="/js/jquery-3.3.1.js"></script>
+  <script src="/js/login_register.js"></script>
+  <script src="/js/build_recipe_logic.js"></script>
+  <script src="/js/meal_search.js"></script>
+  <script src="/js/populate_recipe.js"></script>
+  <script src="/js/pop_up.js"></script>
+  <script src="/js/recipe_book.js"></script>
+  <script src="/js/recipe_card.js"></script>
+  
+</body>
+</html>

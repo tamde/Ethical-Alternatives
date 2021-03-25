@@ -1,0 +1,27 @@
+<span id="user_id" hidden>{{user.ID}}</span>
+<div id="mealSearchContainer">
+    <form action="/search" method="POST">
+        <fieldset>
+            <label for="searchType">Search By:</label>
+            <select id="searchType" name="searchType">
+                <option value="recipe">Recipe Name</option>
+                <option value="ingredient">Ingredients</option>
+            </select>
+            <input type="text" id="recipeSearchText" placeholder="Enter Recipe Name">
+            <input type="text" id="ingredientSearchText" placeholder="Enter Ingredients">
+            <button type="button" id="searchButton">Search</button>
+        </fieldset>
+    </form>
+    <div id="resultsContainer">
+        <h1>Results</h1>
+        <ul id="resultsList" style="list-style-type:none;"></ul>
+    </div>
+    <div id="ingredientsContainer">
+        <h1 id="recipeName"></h1>
+        <ul id="ingredientsList" style="list-style-type:none;"></ul>
+        <p id="recipeDescription"></p>
+        <div>
+            <button type="button" id="addRecipeBtn" style="float: right;">Add to My Recipes</button>
+        </div>
+    </div>
+</div>

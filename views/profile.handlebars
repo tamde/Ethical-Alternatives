@@ -1,0 +1,89 @@
+<div id="formContainer">
+  <h1>Edit user profile for
+  {{#if user.nickname}}
+    {{user.nickname}}
+  {{else}}
+    {{user.username}}
+  {{/if}}
+  </h1>
+  
+  {{#if reg_error}}
+    <div class="error" id='hideMe'>
+      <strong>Error: </strong>
+      {{reg_error}}
+    </div>
+  {{/if}}
+
+  {{#if reg_success}}
+    <div class="success" id='hideMe'>
+      <strong>Success: </strong>
+      {{reg_success}}
+    </div>
+  {{/if}}
+  
+  <hr>
+  
+  <form action="/profile" method="POST" onsubmit="return(validate('new_password', 'confirm_password', 'Passwords do not match'));">
+    <fieldset>
+      <!-- <legend>Update nickname and password</legend> -->
+      <div>
+        <label for="nickname">Change Nickname (Optional, upto 16 characters)</label> <br>
+        <input
+          type="text"
+          id="nickname"
+          name="nickname"
+          maxlength="16"
+          value=
+            {{#if user.nickname}}
+              "{{user.nickname}}"
+            {{else}}
+              ""
+            {{/if}}
+          title="Upto 16 characters" >
+      </div>
+      <br>
+      <hr>
+      <br>
+      <div>
+        <label for="new_password"> Change Password </label> <br>
+        <input
+          type="password"
+          id="new_password"
+          name="new_password"
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}"
+          title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters">
+      </div>
+      <div>
+        Password must be between 8 and 16 characters with: <br>
+        <ul>
+          <li>1 Number</li>
+          <li>1 Uppercase letter</li>
+          <li>1 Lowercase letter</li>
+        </ul>
+      </div>
+      <div>
+        <label for="password"> Confirm new password </label> <br>
+        <input 
+          type="password"
+          id="confirm_password"
+          name="confirm_password"
+          onkeyup="validate('new_password', 'confirm_password', 'Passwords do not match')">
+      </div>
+      <br>
+      <hr>
+      <br>
+      <div>
+        <label for="cur_password">Enter current password to continue</label> <br>
+        <input
+          type="password"
+          id="cur_password"
+          name="cur_password"
+          maxlength="16"
+          title="Enter your current password"
+          required>
+      </div>
+      <button type="submit">Update</button>
+      <button type="button" onclick="window.location.href='/';">Cancel</button>
+    </fieldset>
+  </form>
+</div>

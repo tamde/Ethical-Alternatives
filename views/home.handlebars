@@ -1,0 +1,19 @@
+
+
+<span id="user_id" hidden>{{user.ID}}</span>
+
+{{#if user}}
+  <div id="bodyContainer">
+    <div id="bookContainer">
+    <div id="createRecipeContainer">
+      <a href="/build_recipe">Create new recipe</a>
+    </div>
+      <div id="myBookContainer">
+      </div>
+    </div>
+    <div id="cardRow" class="cardRow">
+    </div>
+  </div>
+{{else}}
+  <iframe src="/about" frameBorder="0" width="90%" height="800px"></iframe>
+{{/if}}

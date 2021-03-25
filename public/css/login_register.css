@@ -1,0 +1,49 @@
+#formContainer
+{
+  width: 40%;
+  min-width: 800px;
+  background-color: #fff7e6;
+  margin: auto;
+  border: 3px solid black;
+  padding-top: 80px;
+}
+
+#hideMe {
+    -moz-animation: cssAnimation 0s ease-in 3s forwards;
+    /* Firefox */
+    -webkit-animation: cssAnimation 0s ease-in 3s forwards;
+    /* Safari and Chrome */
+    -o-animation: cssAnimation 0s ease-in 3s forwards;
+    /* Opera */
+    animation: cssAnimation 0s ease-in 3s forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+@keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        overflow:hidden;
+        padding: 0;
+    }
+}
+@-webkit-keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        visibility:hidden;
+        padding: 0;
+    }
+}
+
+.error {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+}
+
+.success {
+  padding: 20px;
+  background-color: Lightgreen;
+  color: white;
+}

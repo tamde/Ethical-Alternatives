@@ -1,0 +1,21 @@
+#mealSearchContainer {
+    width: 40%;
+    min-width: 800px;
+    background-color: #fff7e6;
+    margin: auto;
+    border: 3px solid black;
+    padding: 80px;
+}
+
+#resultsContainer {
+    display: none;
+}
+
+#ingredientsContainer {
+    display: none;
+}
+
+#ingredientSearchText {
+    display: none;
+}
+
